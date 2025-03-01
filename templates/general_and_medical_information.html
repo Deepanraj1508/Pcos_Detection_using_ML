@@ -1,5 +1,110 @@
 {%extends "menu.html"%}
 {%block content%}
+
+
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #343a40 !important;
+}
+
+.container {
+    max-width: 900px;
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+}
+
+h1, h2 {
+	font-size: 22px;
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    padding: 10px;
+}
+
+h2 {
+    background: #f8f8f8;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+input[type="number"] {
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+select {
+    -webkit-appearance: none; /* For Chrome, Safari */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none;
+    background-image: none; /* Remove any background arrow */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-sm-3 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+</style>
+
 <div class ="general_and_medical_information">
 
 	
@@ -8,19 +113,15 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-		
-		<!-- Navbar-->
-		<nav class="navbar navbar-dark bg-dark">
-			<span class="navbar-brand mb-0 h1">PCOS Test</span>
-		</nav>
+
 		<div class="container">
 			<br>
 			<!--Form-->
 			<form action = "/pred" method ="POST" >
 				<fieldset>
-				<legend><h1 style="color:rgb(100, 100, 100);">PCOS Test Form</h1></legend><br>
+				<legend><h1 style="color:rgb(100, 100, 100);">PCOS General and Medical Information – Test Form</h1></legend><br>
 				  <div class="card card-body" >
-					  <h2 style="background-color:#f8f8f8;"><i>General Information</i></h2> 
+					  <h2 style="background-color:#f8f8f8;">General Information</h2> 
 					  <div class="form-group  row">
 						<div class="col-sm-3">
 							<label for="Age">Age</label>
@@ -139,7 +240,7 @@
 					  </div>
 					  
 					  <br>
-					  <h2 style="background-color:#f8f8f8;"><i>Medical Information</i></h2> 
+					  <h2 style="background-color:#f8f8f8;">Medical Information</h2> 
 					  <div class="form-group  row">
 						<div class="col-sm-3">
 							<label for="Pulserate">Pulse rate(bpm)</label>
