@@ -69,7 +69,7 @@ def make_prediction(model, form_data):
             return "Invalid input data: Feature count mismatch."
 
         prediction = model.predict(array_features)
-        return "The patient is likely to have PCOS!" if prediction[0] == 1 else "The patient is not likely to have PCOS!"
+        return "PCOS Positive" if prediction[0] == 1 else "PCOS Negative"
     except ValueError as ve:
         logging.error(f"Value error: {str(ve)}")
         return "Invalid input: Please enter valid numbers."
@@ -85,7 +85,7 @@ def predict_image(image_path):
         img_array = img_array.reshape(1, 224, 224, 3)
         prediction = model_image.predict(img_array)
         
-        labels = {"infected": prediction[0][0], "not infected": prediction[0][1]}
+        labels = {"PCOS Positive": prediction[0][0], "PCOS Negative": prediction[0][1]}
         predicted_label = max(labels, key=labels.get)
         
         return f"Prediction: {predicted_label}"
