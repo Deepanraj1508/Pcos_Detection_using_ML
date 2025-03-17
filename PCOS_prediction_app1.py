@@ -32,8 +32,8 @@ def load_model(filename):
         raise
 
 # Load the models
-MODEL_GENERAL_PATH = "model_files/general_information.joblib"
-MODEL_MEDICAL_PATH = "model_files/general_and_medical_information.joblib"
+MODEL_GENERAL_PATH = "model_files/catboost_general_information.joblib"
+MODEL_MEDICAL_PATH = "model_files/catboost_general_and_medical_information.joblib"
 MODEL_IMAGE_PATH = "model_files/image_binary_transformer_model.h5"
 
 model_general = load_model(MODEL_GENERAL_PATH)
